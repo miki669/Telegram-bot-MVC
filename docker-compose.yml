@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  snake_shop_bot:
+    image: postgres:13
+    container_name: container_name-db
+    restart: always
+    volumes:
+      - ./Context/data/primarydb/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${PrimaryDB__user}
+      - POSTGRES_PASSWORD=${PrimaryDB__password}
+      - POSTGRES_DB=${PrimaryDB__database}
+    ports:
+      - "6666:5432"
+  shop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PrimaryDB__host=host_name
+      - PrimaryDB__port=6666
+      - PrimaryDB__database=${PrimaryDB__database}
+      - PrimaryDB__user=${PrimaryDB__user}
+      - PrimaryDB__password=${PrimaryDB__password}
+    depends_on:
+      - primarydb
+  
+    
