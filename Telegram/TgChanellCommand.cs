@@ -1,6 +1,4 @@
-﻿using Shop.Context.Table;
-using Telegram.Bot;
-//using System.Data.Entity.Migration;
+﻿using Telegram.Bot;
 using Telegram.Bot.Types;
 
 namespace Shop.Telegram
@@ -13,11 +11,7 @@ namespace Shop.Telegram
         [TelegramChanellCommand("")]
         async Task ExampleChanellPost(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-            
-                    
-                
-
-            
+           
         }
     }
 }

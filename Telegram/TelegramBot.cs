@@ -1,12 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Context;
-using Shop.Context.Table;
 using Telegram.Bot;
-using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.ReplyMarkups;
 
 namespace Shop.Telegram
 {
@@ -20,8 +18,6 @@ namespace Shop.Telegram
         Dictionary<string, TgBotCommand> commandHandlers = new();
         Dictionary<string, TgChanellCommand> ChanellCommandHandlers = new();
         Dictionary<string, TgBotCallback> callbackHandlers = new();
-        DbContextOptions<PrimaryDatabaseContext> primaryDatabaseContext;
-        PrimaryDatabaseContext dbContext;
         TelegramBotClient client;
 
         public TelegramBot(string token)
