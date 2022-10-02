@@ -1,4 +1,4 @@
-# SnakesShop
+# TELEGRAM-BOT
 
 Convenient architecture for telegram bot 
 
