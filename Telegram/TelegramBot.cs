@@ -19,7 +19,8 @@ namespace Shop.Telegram
         Dictionary<string, TgChanellCommand> ChanellCommandHandlers = new();
         Dictionary<string, TgBotCallback> callbackHandlers = new();
         TelegramBotClient client;
-
+        private DbContextOptions<PrimaryDatabaseContext> _primaryDatabaseContext;
+        public PrimaryDatabaseContext DbContext;
         public TelegramBot(string token)
         {
             client = new TelegramBotClient(token);
