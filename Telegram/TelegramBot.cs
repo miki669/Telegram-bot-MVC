@@ -19,7 +19,7 @@ namespace Shop.Telegram
         Dictionary<string, TgChanellCommand> ChanellCommandHandlers = new();
         Dictionary<string, TgBotCallback> callbackHandlers = new();
         TelegramBotClient client;
-        private DbContextOptions<PrimaryDatabaseContext> _primaryDatabaseContext;
+        private DbContextOptions<PrimaryDatabaseContext> primaryDatabaseContext;
         public PrimaryDatabaseContext DbContext;
         public TelegramBot(string token)
         {
